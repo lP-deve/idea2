@@ -1,0 +1,192 @@
+/* ==========================================
+   ChurchkhelaPoster.css
+   ========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+GO:wght@400;500;600;700;800&display=swap');
+
+
+:root {
+  --bg-main: #ffffff;
+  --bg-card: #f8fafc;
+  --text-dark: #0f172a;
+  --text-muted: #475569;
+  --border-color: #e2e8f0;
+  
+  --primary-color: #2563eb; /* ლურჯი */
+  --amber-color: #d97706;   /* ნარინჯისფერი/ოქროსფერი */
+  --emerald-color: #059669; /* მწვანე */
+  --red-color: #dc2626;     /* წითელი */
+  --purple-color: #7c3aed;  /* იასამნისფერი */
+}
+
+/* ძირითადი რესეთი */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Fira GO', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+html, body {
+  background-color: var(--bg-main);
+  color: var(--text-dark);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* მთავარი კონტეინერი */
+.poster-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+  background-color: var(--bg-main);
+}
+
+/* ჰედერის სექცია */
+.poster-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.location-badge {
+  display: inline-block;
+  background-color: #eff6ff;
+  color: var(--primary-color);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 0.8rem;
+  border: 1px solid #bfdbfe;
+  letter-spacing: 0.3px;
+}
+
+.poster-header h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: rgb(32, 32, 140);
+  margin-bottom: 0.8rem;
+  line-height: 1.3;
+}
+
+.subtitle {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ბადის (Grid) განლაგება */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ბარათების (Cards) საერთო სტილი */
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.grid-2 .card {
+  margin-bottom: 0;
+}
+
+/* სათაურების სტილი ბარათებში */
+.card h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.idea-card h2 { color: var(--primary-color); }
+.benefit-card h2 { color: var(--amber-color); }
+.goal-card h2 { color: var(--purple-color); }
+.result-card h2 { color: var(--emerald-color); }
+.risk-card h2 { color: var(--red-color); }
+
+/* ტექსტი და სიები ბარათებში */
+.card p {
+  color: var(--text-dark);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.card ul {
+  list-style: none;
+}
+
+.card ul li {
+  position: relative;
+  padding-left: 1.4rem;
+  margin-bottom: 0.85rem;
+  color: var(--text-dark);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.card ul li:last-child {
+  margin-bottom: 0;
+}
+
+/* სიის მარკერები (Bullets) */
+.card ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.benefit-card ul li::before { color: var(--amber-color); }
+.goal-card ul li::before { color: var(--purple-color); }
+.result-card ul li::before { color: var(--emerald-color); }
+.risk-card ul li::before { color: var(--red-color); }
+
+/* რისკების პრევენციის ტექსტის ხაზგასმა */
+.mitigation {
+  color: var(--emerald-color);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+/* ადაპტირება მობილურებისა და პლანშეტებისთვის */
+@media (max-width: 768px) {
+  .poster-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .poster-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .card {
+    padding: 1.2rem;
+  }
+}
